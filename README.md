@@ -1,6 +1,7 @@
 # Instalasi API Hungryhub
 
-## Installing Composer
+
+### Installing Composer
 
 Prepare composer if you don't have one
 
@@ -19,7 +20,7 @@ put composer.phar in global PATH
 sudo mv composer.phar /usr/local/bin/composer
 ```
 
-## Github Clone
+### Github Clone
 
 Run these command in your terminal
 
@@ -30,7 +31,7 @@ composer install
 cp .env.example .env
 ```
 
-## Genate Encryption Key
+### Genate Encryption Key
 
 Run this command in terminal to generate encryption key on the app
 
@@ -38,7 +39,7 @@ Run this command in terminal to generate encryption key on the app
 php artisan key:generate
 ```
 
-## Database
+### Database
 
 Run MariaDB to create database
 
@@ -80,7 +81,7 @@ DB_PASSWORD='anypassword'
 
 And save it
 
-## Migrate and Database User, Restaurant and Menu Items' Seed
+### Migrate and Database User, Restaurant and Menu Items' Seed
 
 Run these command for Database Migration and Seeders
 
@@ -90,7 +91,7 @@ php artisan db:seed
 ```
 
 
-## Run Test
+### Run Test
 
 Run Test to make sure API is working properly
 
@@ -100,7 +101,7 @@ php artisan test
 
 
 
-## Run Server
+### Run Server
 
 Run this command to run api server
 
