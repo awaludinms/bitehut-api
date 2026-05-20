@@ -3,8 +3,33 @@ services:
   frankenphp:
     build:
       context: .
-    entrypoint: php artisan octane:frankenphp --workers=1 --max-requests=1
+    # entrypoint: php artisan octane:frankenphp --workers=1 --max-requests=1
     ports:
       - "8000:8000"
     volumes:
       - .:/app
+    networks:
+      - laravel
+
+  mysql:
+    image: mariadb:11.6.2
+    restart: unless-stopped
+    tty: true
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: "${DB_DATABASE}"
+      MYSQL_USER: "${DB_USERNAME}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+    networks:
+      - laravel
+    volumes:
+      - databaseVolume2:/var/lib/mysql
+
+volumes:
+  databaseVolume2:
+
+networks:
+    laravel:
+        driver: bridge
