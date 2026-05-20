@@ -1,5 +1,58 @@
-# Instalasi API Hungryhub
+# Instalasi API BiteHub 
 
+## Installation via Docker Compose
+
+1. Install docker and docker-compose
+
+2. Clone BiteHub from https://github.com/awaludinms/bitehut-api.git
+
+```
+git clone https://github.com/awaludinms/bitehut-api.git
+```
+
+3. Enter Clone directory
+
+```
+cd bitehut-api
+```
+
+4. Copy .env.example into .env
+
+```
+cp .env.example .env
+```
+
+5. Run docker
+
+```
+docker-compose up -d
+```
+
+6. Add APP_KEY
+
+```
+docker exec -it bitehut4-franken-1 php artisan key:generate
+```
+
+7. Migrate Database Migrations and Seed
+
+```
+docker exec -it bitehut4-franken-1 php artisan migrate
+```
+
+```
+docker exec -it bitehut4-franken-1 php artisan db:seed
+```
+
+8. Run Test
+
+```
+docker exec -it bitehut4-franken-1 php artisan test
+```
+
+
+
+## Manual Installation
 
 ### Installing Composer
 
@@ -13,6 +66,7 @@ php -r "unlink('composer-setup.php');"
 ```
 
 
+### Install any required php extention
 
 put composer.phar in global PATH
 
@@ -25,8 +79,8 @@ sudo mv composer.phar /usr/local/bin/composer
 Run these command in your terminal
 
 ```
-git clone https://github.com/awaludinms/hungryhub-api-2026.git
-cd hungryhub-api-2026
+git clone https://github.com/awaludinms/bitehut-api.git
+cd bitehut-api
 composer install
 cp .env.example .env
 ```
