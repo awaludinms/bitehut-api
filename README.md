@@ -6,49 +6,49 @@
 
 2. Clone BiteHub from https://github.com/awaludinms/bitehut-api.git
 
-```
-git clone https://github.com/awaludinms/bitehut-api.git
-```
-
+  ```
+  git clone https://github.com/awaludinms/bitehut-api.git
+  ```
+  
 3. Enter Clone directory
 
-```
-cd bitehut-api
-```
+  ```
+  cd bitehut-api
+  ```
 
 4. Copy .env.example into .env
 
-```
-cp .env.example .env
-```
+  ```
+  cp .env.example .env
+  ```
 
 5. Run docker
 
-```
-docker-compose up -d
-```
+  ```
+  docker-compose up -d
+  ```
 
 6. Add APP_KEY
 
-```
-docker exec -it bitehut4-franken-1 php artisan key:generate
-```
+  ```
+  docker exec -it bitehut4-franken-1 php artisan key:generate
+  ```
 
 7. Migrate Database Migrations and Seed
 
-```
-docker exec -it bitehut4-franken-1 php artisan migrate
-```
-
-```
-docker exec -it bitehut4-franken-1 php artisan db:seed
-```
+  ```
+  docker exec -it bitehut4-franken-1 php artisan migrate
+  ```
+  
+  ```
+  docker exec -it bitehut4-franken-1 php artisan db:seed
+  ```
 
 8. Run Test
 
-```
-docker exec -it bitehut4-franken-1 php artisan test
-```
+  ```
+  docker exec -it bitehut4-franken-1 php artisan test
+  ```
 
 
 
