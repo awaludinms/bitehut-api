@@ -21,6 +21,9 @@ RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist
 
 COPY . /app
 
+RUN composer dump-autoload --optimize
+RUN chown -R www-data:www-data /app/storage /app/bootstrap/cache
+
 # CMD ["ls"]
 
 # ENTRYPOINT "/app/start.sh"
